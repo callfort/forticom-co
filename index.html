@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forticom</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB0UlEQVRYR+2WsU4CQRCG36gKkgoV2kpVKAHdBQvQNKigFEHoJ0IIdUKAqVdQ3YCX0NxUL5rNfYzPZ7e54N/IJkZj+3Mzs7OQxxDAH4Gdx5AGzyXlsvFtFaQTicDq8yGeiSmFlpgAgx1RcmX4xP0bhIGQKwAFhBiJP4Dd62DrXzRPQsx0WmAB1RtBmA4AbwDKTyh0kFaEA5Wsa1DNK0srsz5fEKzkxJjEAxNoDbBTy4w4RWsgpoBYz1MbB+g9DAx6X/AEOVZUP8BjGxTkEoAJbNQ7HPDi4JXK8JXMZcBoqHcg6ILQZQJWn6hIhVdBuQCx6K1QBvMrERcAJ4B5kJUPYAdb1/Fy+3gbZT6I7YNwwAKe8rYZjBAPgEYzRXaE5IDwCxMC1VktpA1EQBLTGpAXq7RXJ7hVzUujmALsCMl8tcf8g26QeTxR1W9Mpt6WaH4gP5At+xWpNNxyEGIAAAAASUVORK5CYII=" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,14 +13,18 @@
             background: #0b0c10;
             color: #f8f8f8;
         }
-        header {
+        header, footer {
             background: #1f2833;
+            color: #c5c6c7;
+        }
+        header {
             padding: 2rem;
             text-align: center;
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            color: #f8f8f8;
         }
         header p {
             margin: 0.5rem 0 0;
@@ -28,8 +33,18 @@
         }
         section {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
+        }
+        h2 {
+            color: #66fcf1;
+            margin-top: 0;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
         }
         a {
             color: #66fcf1;
@@ -38,16 +53,62 @@
         a:hover {
             text-decoration: underline;
         }
+        .personas-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .persona-card {
+            background: #1f2833;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        section.investors {
+            background: rgba(102, 252, 241, 0.05);
+            border-left: 4px solid #66fcf1;
+        }
         footer {
             text-align: center;
             padding: 1rem;
-            background: #1f2833;
             font-size: 0.9rem;
-            color: #c5c6c7;
+        }
+
+        @media (min-width: 768px) {
+            .personas-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background: #ffffff;
+                color: #111111;
+            }
+            header, footer {
+                background: #f0f0f0;
+                color: #333333;
+            }
+            header h1 {
+                color: #111111;
+            }
+            header p, h2, a {
+                color: #0077cc;
+            }
+            .persona-card {
+                background: #f9f9f9;
+                color: #111111;
+            }
+            section.investors {
+                background: #e7f8fa;
+                border-left: 4px solid #0077cc;
+            }
         }
     </style>
 </head>
 <body>
+
 <header>
     <h1>Forticom</h1>
     <p>The sovereign platform for trusted messaging</p>
@@ -65,6 +126,16 @@
         <li>Built on <a href="https://swiftboot.dev" target="_blank">SwiftBoot</a> — hardened kernel, trusted root</li>
         <li>Signal protocol, privacy-enhanced and container-isolated</li>
         <li>Air-gapped options, sovereign hosting, TPM-based keying</li>
+        <li>Zero metadata retention — nothing logged, not even session headers</li>
+        <li>Fully auditable stack — from bootloader to message payload</li>
+        <li>Self-contained relay infrastructure deployable to customer cloud or bare metal</li>
+        <li>Supports private DNS and sideband out-of-band channels</li>
+        <li>Endpoint hardening with per-user hardware identity binding</li>
+        <li>Works offline, behind firewalls, or within fully isolated enclaves</li>
+        <li>Integrates cleanly with compliance and audit workflows — without third-party SaaS</li>
+        <li>Supports multiple operational modes — ephemeral, stealth, persistent, or broadcast</li>
+        <li>Zero third-party trackers, libraries, analytics, or CDNs</li>
+        <li>Designed for sensitive comms: defense, diplomacy, corporate control rooms, and beyond</li>
     </ul>
 </section>
 
@@ -74,6 +145,55 @@
         Forticom runs on top of <a href="https://swiftboot.dev" target="_blank">SwiftBoot</a>,
         a minimal, reproducible Linux distribution designed for secure, container-native environments.
     </p>
+</section>
+
+<section>
+    <h2>Who is Forticom for?</h2>
+    <div class="personas-container">
+
+        <div class="persona-card">
+            <h3>🎖️ Defense Tech Operator</h3>
+            <p><strong>Goal:</strong> Secure messaging in air-gapped or contested zones</p>
+            <p><strong>Needs:</strong> Offline ops, relay control, no external dependencies</p>
+            <p><strong>Forticom Delivers:</strong> On-prem relay, container-isolated endpoints, TPM-based keys</p>
+        </div>
+
+        <div class="persona-card">
+            <h3>🧑‍💼 Enterprise CISO</h3>
+            <p><strong>Goal:</strong> Messaging within compliance boundaries</p>
+            <p><strong>Needs:</strong> Audit trails, no data offshoring, SaaS-free</p>
+            <p><strong>Forticom Delivers:</strong> Local deployment, internal-only visibility, zero analytics</p>
+        </div>
+
+        <div class="persona-card">
+            <h3>🌐 Diplomatic or NGO Field Agent</h3>
+            <p><strong>Goal:</strong> Communicate securely in volatile or censored regions</p>
+            <p><strong>Needs:</strong> Low profile, fallback paths, peer trust</p>
+            <p><strong>Forticom Delivers:</strong> NAT/firewall safe, no app store trace, sideband DNS support</p>
+        </div>
+
+        <div class="persona-card">
+            <h3>🧑‍🚀 Red Team Lead</h3>
+            <p><strong>Goal:</strong> Coordinate during live threats or simulation events</p>
+            <p><strong>Needs:</strong> No trust, no trace, fast lockdown</p>
+            <p><strong>Forticom Delivers:</strong> Ephemeral mode, metadata suppression, self-destruct channels</p>
+        </div>
+
+        <div class="persona-card">
+            <h3>👑 Executive or Boardroom</h3>
+            <p><strong>Goal:</strong> Private comms for critical business decisions</p>
+            <p><strong>Needs:</strong> Sovereignty, discretion, clean UX</p>
+            <p><strong>Forticom Delivers:</strong> Private stack, intuitive UI, no shared infra</p>
+        </div>
+
+        <div class="persona-card">
+            <h3>📰 Investigative Journalist</h3>
+            <p><strong>Goal:</strong> Protect sources, publish truth, evade censorship</p>
+            <p><strong>Needs:</strong> No ID tie-ins, no cloud logs, stealth access</p>
+            <p><strong>Forticom Delivers:</strong> No SIM/app store, offline mode, hardware-bound keys, OS-level stealth</p>
+        </div>
+
+    </div>
 </section>
 
 <section>
@@ -92,8 +212,18 @@
     </p>
 </section>
 
+<section class="investors">
+    <h2>Investors</h2>
+    <p>
+        Forticom is currently <strong>SAFE-ready</strong> for qualified investors via <strong>Carta</strong>.<br />
+        To receive more information, please contact us at:<br />
+        <a href="mailto:invest@forticom.co">invest@forticom.co</a>
+    </p>
+</section>
+
 <footer>
     &copy; 2025 Forticom. All rights reserved.
 </footer>
+
 </body>
 </html>
